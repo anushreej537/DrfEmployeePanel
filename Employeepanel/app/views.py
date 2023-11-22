@@ -3,8 +3,9 @@ from .models import *
 from .serializer import StudentSerializer
 from django.contrib.auth.hashers import check_password,make_password
 from rest_framework import generics
-from rest_framework_simplejwt.token import RefreshToken
+from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.response import Response
+
 class RegistrationApiView(generics.CreateAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
